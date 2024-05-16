@@ -1,0 +1,155 @@
+/* GERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    background-color: #071431;
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #f5bc00;
+    border-radius: 10px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #2b271a;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1600px;
+    min-height: 100vh;
+    margin: 0 auto;
+    background: linear-gradient(90deg, #2b271a, #071431, #2b271a);
+}
+
+.row {
+    display: flex;
+    flex-direction: row !important;
+    overflow-x: hidden;
+}
+
+.scroll-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scrollbar-width: none;
+}
+
+main {
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* NAVEGAÇÂO */
+header {
+    width: 100%;
+    height: 55px;
+    padding: 10px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #f5bc00;
+}
+
+header button {
+    background-color: transparent;
+    color: #fff;
+    font-size: 1.6rem;
+    cursor: pointer;
+    border: none;
+}
+
+#menuNav {  
+    background-color: #11101da1;
+    color: #fff;
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid #4e4e4e69;
+    display: none;
+    position: absolute;
+    top: 55px;
+    right: 0;
+    width: 50%;
+    z-index: 100;
+    flex-direction: column;
+    list-style: none;  
+    text-align: center;
+}
+
+#menuNav li {
+    margin: 5px 0; 
+    padding: 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: #4d4d4da1;
+}
+
+#menuNav a {
+    color: #f5bc00;
+    text-decoration: none;
+}
+
+.active {
+    display: flex !important;
+}
+
+/* RESPONSIVIDADE */
+@media only screen and (min-width: 768px) {
+    #btnNav {
+        display: none;
+    }
+
+    nav {
+        width: 50%;
+    }
+
+    #menuNav {
+        display: flex;
+        position: relative;
+        background-color: transparent;
+        top: 0;  
+        color: #fff;
+        width: 100%;
+        flex-direction: row;
+        justify-content: end;
+        border: none;
+    }
+
+    #menuNav li {
+        margin: 0 20px;
+        padding: 0;
+        background-color: transparent;
+        font-size: 1.2rem;
+        border-radius: 0;
+    }
+
+    #menuNav li:hover {
+        border-bottom: 2px solid #fff;
+    }
+}
+
+/* FOOTER */
+footer {
+    width: 100%;
+    height: 55px;
+    padding: 10px;
+    font-size: 0.7rem;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

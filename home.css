@@ -1,0 +1,168 @@
+/* CONTEUDO */
+.item {
+    width: 100%;
+    padding: 15px 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+.item img {
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.item img:hover {
+    transform: scale(1.1);
+    transition: 0.3s; 
+}
+
+.btnPlay {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #f5bc00;
+    border: 1px solid #ffffff5e;
+    font-size: 2.5rem;
+    background-color: #11101d59;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.item img:hover ~ .btnPlay{
+    display: block;
+}
+
+.overlay-year {
+    color: #fff;
+    font-size: 0.7rem;
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    padding: 5px;
+    background-color: #11101d59;
+    border-radius: 5px;
+    overflow-x: hidden;
+    width: 35px
+}
+.overlay-year span {
+    font-weight: 700;
+    
+}
+
+.overlay-title {
+    color: #fff;
+    text-wrap: wrap;
+    font-size: 0.7rem;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    padding: 5px;
+    background-color: #11101d59;
+    border-radius: 5px;
+}
+
+section div {
+    position: relative;
+    align-items: center;
+}
+
+section h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 25px 0 0 0;
+    color: #e4e4e4;
+}
+
+section .btn-prev {
+    z-index: 99;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #11101da1;
+    color: #fff;
+    padding: 10px;
+    margin: 15px 0;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    height: 200px;
+    border: none;
+}
+
+section .btn-next {
+    z-index: 99;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #11101da1;
+    color: #fff;
+    padding: 20px 10px;
+    margin: 15px 0;
+    border-radius: 5px 0 0 5px;
+    cursor: pointer;
+    height: 200px;
+    border: none;
+}
+
+.search {
+    display: flex;
+    max-width: 500px;
+    left: 50%;
+    transform: translateX(-50%);
+    align-items: center;
+    margin: 20px 0;
+    position: relative;
+}
+
+.search input {
+    width: 100%;
+    max-width: 500px;
+    padding: 15px;
+    border-radius: 20px;
+    border: 1px solid #4e4e4e69;
+    outline: none;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #4e4e4e69;
+}
+
+.search button {
+    position: absolute;
+    right: 0;
+    color: #ffffff;
+    padding: 15px;
+    background: transparent;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-500%);
+    }
+}
+
+@media only screen and (min-width: 758px) {
+    .item img {
+        height: 300px;
+    }
+
+    section .btn-prev {
+        height: 300px;
+        padding: 30px 10px;
+    }
+
+    section .btn-next {
+        height: 300px;
+        padding: 30px 10px;
+    }
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>FlashFlix</title>
+  <link rel="stylesheet" href="global.css">
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>FlashFlix</h1>
+      <nav>
+        <button id="btnNav" type="button"><i class="fa-solid fa-bars"></i></button>
+        <ul id="menuNav">
+          <li> 
+            <a href="#">Inicio</a>
+          </li>
+          <li>
+            <a href="#">Filmes</a>
+          </li>
+          <li>
+            <a href="#">Series</a>
+          </li>
+          <li>
+            <a href="#">Categorias</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="search">
+        <input type="text" placeholder="pesquisar">
+        <button type="button"><i class="fas fa-search"></i></button>
+      </section>
+
+      <section>
+        <h2>Movies</h2>
+        <div>
+          <div class="row scroll-container" id="movies-container"></div>
+          <button type="button" class="btn-prev"><i class="fas fa-angle-left"></i></button>
+          <button type="button" class="btn-next"><i class="fas fa-angle-right"></i></button>
+        </div>
+      </section>
+
+      <section>
+        <h2>Series</h2>
+        <div>
+          <div class="row scroll-container" id="series-container"></div>
+          <button type="button" class="btn-prev"><i class="fas fa-angle-left"></i></button>
+          <button type="button" class="btn-next"><i class="fas fa-angle-right"></i></button>
+        </div>
+      </section>
+
+      <section>
+        <h2>Top Rated Movies</h2>
+        <div>
+          <div class="row scroll-container" id="toprated-movies-container"></div>
+          <button type="button" class="btn-prev"><i class="fas fa-angle-left"></i></button>
+          <button type="button" class="btn-next"><i class="fas fa-angle-right"></i></button>
+        </div>
+      </section>
+
+      <section>
+        <h2>Top Rated Series</h2>
+        <div>
+          <div class="row scroll-container" id="toprated-series-container"></div>
+          <button type="button" class="btn-prev"><i class="fas fa-angle-left"></i></button>
+          <button type="button" class="btn-next"><i class="fas fa-angle-right"></i></button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Copyright &copy; 2024 FlashFlix desenvolvido por VitorGSC</p>
+    </footer>
+  </div>
+  <script src="https://kit.fontawesome.com/a7ac4989d6.js" crossorigin="anonymous"></script>
+  <script src="app.js"></script>
+</body>
+</html>

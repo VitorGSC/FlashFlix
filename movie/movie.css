@@ -1,0 +1,311 @@
+p {
+    margin: 0.8em;
+}
+
+h2, h3 {
+    margin: 0.5em;
+    color: #796010;
+}
+
+h4 {
+    margin: 0.7em;
+    color: #796010;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.movie {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1em;
+}
+
+.movie img {
+    width: 300px;
+    height: 450px;
+}
+
+.movieTitle {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #f5bc00;
+}
+
+p#movieRelease {
+    font-size: 0.8rem;
+    margin: 0.8em;
+    color: #afafaf;
+}
+
+.movieDetails {
+    width: 100%;
+}
+
+.castProfile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+}
+
+.castProfile img {
+    max-width: 100%;
+    height: auto;
+    width: 25vw;
+    border-radius: 10%;
+}
+
+.castProfile p {
+    font-size: 0.7em;
+    max-width: 100%;
+    width: 20vw;
+    text-align: center;
+    text-wrap: wrap;
+    color: #afafaf;
+}
+
+#moviePlayer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+
+    position: absolute;
+    top: 250px;
+    left: 50%;
+    transform: translate(-50%, 250px);
+    z-index: 100;
+}
+
+#moviePlayer button {
+    background-color: #f5bc00;
+    color: #000;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+#moviePlayer button:hover {
+    background-color: #ac8401;
+    color: #ffffff;
+}
+
+#movieCredits div {
+    position: relative;
+    width: 100%;
+}
+
+#movieCreditsProfile {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 10px;
+}
+
+.btn-prev {
+    z-index: 99;
+    position: absolute;
+    top: 15%;
+    left: 0;
+    background-color: #11101da1;
+    color: #fff;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+}
+
+.btn-next {
+    z-index: 99;
+    position: absolute;
+    top: 15%;
+    right: 0;
+    background-color: #11101da1;
+    color: #fff;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 5px 0 0 5px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+}
+
+#serie-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+#season-dropdown {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 10px;
+}
+
+.dropdown-content {
+    display: none;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #6b6b6b33;
+    min-width: 160px;
+    z-index: 1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 5px;
+    border-radius: 0 0 8px 8px;
+}
+
+.dropdown-content button {
+    background-color: #11101da1;
+    color: #fff;
+    width: 46%;
+    margin: 1px 2%;
+    padding: 10px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.dropdown {
+    display: flex;
+    flex-direction: column;
+}
+
+.dropbtn {
+    background-color: #11101da1;
+    color: #fff;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #4e4e4e69;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.dropbtn:hover, .dropbtn:focus, .dropbtn:active {
+    background-color: #f5bc00;
+}
+
+.episodes-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #11101da1;
+    border-radius: 8px;
+}
+
+.episode {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.episode img {
+    width: 125px;
+    height: auto;
+}
+
+.episode p {
+    font-size: 0.8em;
+    color: #afafaf;
+}
+
+.episode button {
+    background-color: #f5bc00;
+    color: #fff;
+    padding: 5px;
+    margin-left: 8px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+iframe[src*="h"] {
+    width: 100%;
+    height: 100vh;
+    margin: 15px 0;
+}
+
+@media only screen and (min-width: 768px) {
+    .movie {
+        flex-direction: row;
+        justify-content: center;
+        align-items: start;
+        width: 100%;
+        float: right;
+    }
+
+    .castProfile img{
+        width: 12vw;
+    }
+
+    .castProfile p {
+        width: 12vw;
+    }
+
+    #movieCreditsProfile {
+        width: 100%;
+    }
+
+    .movieDetails {
+        width: 50%;
+    }
+
+    .movieDetails div {
+        flex-direction: column;
+        margin: 5px;
+    }
+
+    #moviePlayer {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: translate(0, 0);
+    }
+
+    #moviePlayer button {
+        padding: 15px;
+        font-size: 1.2em;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .movie img {
+        width: 400px;
+        height: 600px;
+    }
+
+    .castProfile img {
+        width: 5vw;
+        height: auto;
+    }
+
+    .castProfile p {
+        width: 5vw;
+    }
+
+    #serie-container {
+        margin: 0 auto;
+        width: 50%;
+    }
+
+    .episodes-container{
+        width: 50%;
+    }
+}
+
