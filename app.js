@@ -3,7 +3,7 @@ document.querySelector('#btnNav').addEventListener('click', event => {
     document.querySelector('#menuNav').classList.toggle('active');
 });
 
-if(window.location.pathname === '/index.html' || window.location.pathname === '/' || window.location.pathname === '/index.html#') {
+if(window.location.pathname === '/index.html' || window.location.pathname === '/' || window.location.pathname === '/index.html#' || window.location.pathname === '/#' || window.location.pathname === 'FlashFlix/') {
     console.log('index');
     const apiKey = "bcc9273e9851f58686fedf85973c8de9";
     const apiBaseUrl = "https://api.themoviedb.org/3";	
