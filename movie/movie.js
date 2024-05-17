@@ -151,3 +151,8 @@ document.querySelector('.btn-prev').addEventListener('click', () => {
 document.querySelector('.btn-next').addEventListener('click', () => {
     document.querySelector('.scroll-container').scrollLeft += 150;
 });
+
+document.querySelector('#btnNav').addEventListener('click', event => {
+    console.log('click');
+    document.querySelector('#menuNav').classList.toggle('active');
+});
