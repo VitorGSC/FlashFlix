@@ -59,10 +59,11 @@ header {
     align-items: center;
 }
 
-header h1 {
+header h1 a {
     font-size: 24px;
     font-weight: 700;
     color: #f5bc00;
+    text-decoration: none;
 }
 
 header button {
@@ -105,6 +106,39 @@ header button {
 
 .active {
     display: flex !important;
+}
+
+.search-container {
+    display: flex;
+    max-width: 500px;
+    left: 50%;
+    transform: translateX(-50%);
+    align-items: center;
+    margin: 20px 0;
+    position: relative;
+}
+
+.search-container input {
+    width: 100%;
+    max-width: 500px;
+    padding: 15px;
+    border-radius: 20px;
+    border: 1px solid #4e4e4e69;
+    outline: none;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #4e4e4e69;
+}
+
+.search-container button {
+    position: absolute;
+    right: 0;
+    color: #ffffff;
+    padding: 15px;
+    background: transparent;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
 }
 
 /* RESPONSIVIDADE */

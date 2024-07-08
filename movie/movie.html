@@ -11,12 +11,12 @@
 <body>
     <div class="container">
         <header>
-          <h1>FlashFlix</h1>
+          <h1><a href="/">FlashFlix</a></h1>
           <nav>
             <button id="btnNav" type="button"><i class="fa-solid fa-bars"></i></button>
             <ul id="menuNav">
               <li> 
-                <a href="../index.html">Inicio</a>
+                <a href="/">Inicio</a>
               </li>
               <li>
                 <a href="#">Filmes</a>
@@ -57,22 +57,24 @@
                         <p id="movieRating">Movie Rating</p>
                     </div>
                 </article>
+
                 <article id="moviePlayer">
                     <div>
-                        <button type="button" onclick="switchEmbed('https://vidsrc.xyz/embed/' + getParamsByName('vidsrc'))">Server US 1</button>
-                        <button type="button" onclick="switchEmbed('https://embedder.net/e/' + getParamsByNameIMDb('embedder'))">Server US 2</button>
-                        <button type="button" onclick="switchEmbed('https://embed.warezcdn.com/' + getParamsByNameIMDb('warezcdn'))">Server BR</button>
-                        <button type="button" onclick="switchEmbed('https://superflixapi.top/' + getParamsByNameIMDb('warezcdn'))">Server BR 2</button>
+                        <button type="button" onclick="switchEmbed('https://vidsrc.me/embed/' + getParamsByName('vidsrc'))">Server US 1</button>
+                        <button type="button" onclick="switchEmbed('https://embedder.net/e/' + getParamsByName('embedder'))">Server US 2</button>
+                        <button type="button" onclick="switchEmbed('https://embed.warezcdn.com/' + getParamsByName('warezcdn'))">Server BR</button>
+                        <button type="button" onclick="switchEmbed('https://superflixapi.top/' + getParamsByName('warezcdn'))">Server BR 2</button>
                         <!-- <button type="button">Add to Favorites</button> -->
                     </div>
                 </article>
+
                 <article>
                   <div id="serie-container">
                   </div>
                   <div class='episodes-container'></div>
                 </article>
             </section>
-            <section>
+            <section id="embed-container">
               <iframe class="embed" src="" frameborder="0" allowfullscreen ></iframe>
             </section>
         </main>

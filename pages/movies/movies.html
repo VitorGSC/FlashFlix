@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../global.css">
+    <link rel="stylesheet" href="movies.css">
+    <title>FlashFlix</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="/">FlashFlix</a></h1>
+            <nav>
+                <button id="btnNav" type="button"><i class="fa-solid fa-bars"></i></button>
+                <ul id="menuNav">
+                    <li> 
+                        <a href="/">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="movies.html">Filmes</a>
+                    </li>
+                    <li>
+                        <a href="../series/series.html">Series</a>
+                    </li>
+                    <li>
+                        <a href="#">Categorias</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <form action="" method="GET" id="search-form" name="search-form" class="search-container">
+                <input id="search-movie" name="search" type="text" placeholder="pesquisar">
+                <button onclick="searchMovie()" type="submit"><i class="fas fa-search"></i></button>
+            </form>
+            <section id="movies-container"></section>
+        </main>
+
+        <footer>
+            <p>Copyright &copy; 2024 FlashFlix desenvolvido por VitorGSC</p>
+        </footer>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a7ac4989d6.js" crossorigin="anonymous"></script>
+    <script src="movies.js"></script>
+</body>
+</html>

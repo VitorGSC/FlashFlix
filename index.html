@@ -10,18 +10,18 @@
 <body>
   <div class="container">
     <header>
-      <h1>FlashFlix</h1>
+      <h1><a href="/">FlashFlix</a></h1>
       <nav>
         <button id="btnNav" type="button"><i class="fa-solid fa-bars"></i></button>
         <ul id="menuNav">
           <li> 
-            <a href="#">Inicio</a>
+            <a href="/">Inicio</a>
           </li>
           <li>
-            <a href="#">Filmes</a>
+            <a href="pages/movies/movies.html">Filmes</a>
           </li>
           <li>
-            <a href="#">Series</a>
+            <a href="pages/series/series.html">Series</a>
           </li>
           <li>
             <a href="#">Categorias</a>
@@ -30,10 +30,10 @@
       </nav>
     </header>
     <main>
-      <section class="search">
-        <input type="text" placeholder="pesquisar">
-        <button type="button"><i class="fas fa-search"></i></button>
-      </section>
+      <form action="javascript:void()" method="GET" id="search-form" name="search-form" class="search-container">
+        <input id="search-movie" name="search" type="text" placeholder="pesquisar">
+        <button onclick="searchMovie()" type="submit"><i class="fas fa-search"></i></button>
+      </form>
 
       <section>
         <h2>Movies</h2>

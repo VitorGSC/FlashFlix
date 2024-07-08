@@ -7,7 +7,9 @@ const language = document.documentElement.lang;
 document.addEventListener("DOMContentLoaded", async () => {
     id = new URLSearchParams(window.location.search).get("id");
     type = new URLSearchParams(window.location.search).get("type");
-
+    season = new URLSearchParams(window.location.search).get("season");
+    episode = new URLSearchParams(window.location.search).get("episode");
+    
     if(!id || !type) {
         window.location.href = "../index.html";
     } else if(type === 'serie') {
@@ -16,7 +18,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.log(id, type);
     const movie = await fetch(`https://api.themoviedb.org/3/${type}/${id}?api_key=${apiKey}&language=${language}`);
     const data = await movie.json();
-    console.log(data);
     imdb_id = data.imdb_id;
     document.querySelector('.movieTitle').innerText = data.title || data.name;
     let img = data.poster_path || data.backdrop_path;
@@ -27,8 +28,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.querySelector('#movieRelease').innerText = date; 
     let credits = await fetch(castUrlCredits(type, id));
     let creditsProfilePath = await credits.json();
-    console.log(credits);
-    console.log(creditsProfilePath);
     document.querySelector('#movieCreditsProfile').innerHTML += creditsProfilePath.cast.map(cast =>{ 
         if (!cast.profile_path) return;    
         return `
@@ -41,6 +40,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     
     if(type === 'tv') {
         document.querySelector('#moviePlayer').style.display = 'none';
+        if(season) {
+            document.querySelector('.embed').src = `https://vidsrc.me/embed/tv?tmdb=${id}&season=${season}&episode=${episode}`; 
+            document.querySelector('#moviePlayer').classList.add('moviePlayerJs');
+            document.querySelector('#embed-container').appendChild(document.querySelector('#moviePlayer'));
+        }
         document.querySelector('#serie-container').innerHTML = 
         `<div class="dropdown" id="season-dropdown">
             <button class="dropbtn" onclick="seasonDropdown()">Seasons</button>
@@ -86,7 +90,7 @@ function seasonEpisodes(season) {
                         <img src="http://image.tmdb.org/t/p/w300${episode.still_path}" />
                         <div>
                             <p>EP ${episode.episode_number} ${episode.name}</p>
-                            <button onclick="watchEpisode(${episode.episode_number})">Assista</button>
+                            <button onclick="watchEpisode(${season}, ${episode.episode_number})">Assista</button>
                         </div>
                     </div>
                 `;
@@ -108,13 +112,42 @@ function getParamsByName(name) {
     let params = new URLSearchParams(window.location.search); 
     let type = params.get('type');
     let id = params.get('id');
+    let season = params.get('season');
+    let episode = params.get('episode');
     
-    switch(name) {
-        case 'vidsrc': 
-            return type + '?tmdb=' + id;
-        default:
-            return;
+    if(type === 'serie') {
+        switch(name) {
+            case 'vidsrc': 
+                return 'tv?tmdb=' + id + '&season=' + season + '&episode=' + episode;
+            case 'embedder':
+                return id + '/' + season + '/' + episode;
+            case 'warezcdn':
+                return 'serie/' + id + '/' + season + '/' + episode;
+            default:
+                return;
+        }
+    } else {
+        switch(name) {
+            case 'vidsrc': 
+                return type + '?tmdb=' + id;
+            case 'embedder':
+                return id;
+            case 'warezcdn':
+                return 'filme/' + imdb_id;
+            default:
+                return;
+        }
     }
+}
+
+function watchEpisode(season, episode) {
+    let id = new URLSearchParams(window.location.search).get('id');
+    if(window.location.search.includes('season')) {
+        let params = new URLSearchParams(window.location.search);
+        params.set('season', season);
+        params.set('episode', episode);
+        window.location.search = params.toString();
+    } else window.location.search += `&season=${season}&episode=${episode}`;
 }
 
 function getParamsByNameIMDb(name) {
@@ -153,6 +186,5 @@ document.querySelector('.btn-next').addEventListener('click', () => {
 });
 
 document.querySelector('#btnNav').addEventListener('click', event => {
-    console.log('click');
     document.querySelector('#menuNav').classList.toggle('active');
 });

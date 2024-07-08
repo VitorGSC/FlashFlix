@@ -79,6 +79,15 @@ p#movieRelease {
     z-index: 100;
 }
 
+.moviePlayerJs {
+    display: flex !important;
+    position: relative;
+    flex-direction: row;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+}
+
 #moviePlayer button {
     background-color: #f5bc00;
     color: #000;

@@ -49,9 +49,6 @@ const createMovieList = (movies, element) => {
                 <h3>${movie.title || movie.name}</h3>
             </div>
         `;
-        movieEl.innerHTML += `
-            <button class='btnPlay' type='button'><i class="fas fa-play"></i></button>
-        `;
         movieEl.addEventListener("click", () => {
             window.location.href = `./movie/movie.html?id=${movie.id}&type=${movie.title ? "movie" : "serie"}`;
             console.log(movie.id);
@@ -92,3 +89,8 @@ document.querySelectorAll('.btn-prev').forEach(item => {
         container.scrollLeft -= 150;
     });
 });
+
+function searchMovie() {
+    let search = document.getElementById('search-movie').value;
+    window.location.href = `./search/search.html`+`?search=${search}`;
+}
