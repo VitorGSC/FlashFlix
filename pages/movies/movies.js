@@ -65,3 +65,8 @@ main();
 document.querySelector('#btnNav').addEventListener('click', event => {
     document.querySelector('#menuNav').classList.toggle('active');
 });
+
+function searchMovie() {
+    let search = document.getElementById('search-movie').value;
+    window.location.href = `../../search/search.html`+`?search=${search}`;
+}

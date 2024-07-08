@@ -53,7 +53,7 @@ const createMovieList = (movies, element) => {
             </div>
         `;
         movieEl.addEventListener("click", () => {
-            window.location.href = `./series/series.html?id=${movie.id}&type=${movie.title ? "movie" : "serie"}`;
+            window.location.href = `../../movie/movie.html?id=${movie.id}&type=${movie.title ? "movie" : "serie"}`;
             console.log(movie.id);
         });
         element.appendChild(movieEl);
@@ -65,3 +65,8 @@ main();
 document.querySelector('#btnNav').addEventListener('click', event => {
     document.querySelector('#menuNav').classList.toggle('active');
 });
+
+function searchMovie() {
+    let search = document.getElementById('search-movie').value;
+    window.location.href = `../../search/search.html`+`?search=${search}`;
+}
