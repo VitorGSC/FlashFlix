@@ -41,7 +41,7 @@ const createMovieList = (movies, element) => {
             </div>
         `;
         movieEl.addEventListener("click", () => {
-            window.location.href = `./movie/movie.html?id=${movie.id}&type=${movie.title ? "movie" : "serie"}`;
+            window.location.href = `../movie/movie.html?id=${movie.id}&type=${movie.title ? "movie" : "serie"}`;
             console.log(movie.id);
         });
         element.appendChild(movieEl);
